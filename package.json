@@ -6,7 +6,7 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "browser-sync start --server --index ./tests/tests.html --files='./node_modules, ./devp/assets, ./tests'",
+    "test": "browser-sync start --server --index ./tests/index.html --files='./node_modules, ./devp/assets/js/app.js, ./tests/test.spec.js'",
     "start-devp": "browser-sync start --server devp --files='./devp/assets, ./devp/*.html'",
     "start": "gulp get-production && node index.js"
   },
