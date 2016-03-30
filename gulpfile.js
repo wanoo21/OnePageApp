@@ -41,7 +41,7 @@ gulp.task('watch:scss', function () {
 });
 
 // Get Production version
-gulp.task('get-production', function () {
+gulp.task('get-production', ['scripts', 'scss'] ,function () {
     // Get all optimized assets
     gulp.src('./devp/assets/**/*')
         .pipe(gulp.dest(config.productionFolderPath + '/assets'));
