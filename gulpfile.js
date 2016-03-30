@@ -9,6 +9,7 @@ var concat = require('gulp-concat');
 var tsProject = ts.createProject('tsconfig.json', { noExternalResolve: false });
 var config = require('./config');
 
+// Compile TypeScript files
 gulp.task('scripts', function () {
     var tsResult = tsProject.src('devp/ts/*.ts')
         .pipe(sourcemaps.init({ "loadMaps": true, "debug": false }))
@@ -20,6 +21,7 @@ gulp.task('scripts', function () {
         .pipe(gulp.dest('./devp/assets/js'));
 });
 
+// Compile Scss files
 gulp.task('scss', function () {
     return gulp.src('devp/scss/*.scss')
         .pipe(sourcemaps.init({ "loadMaps": true, "debug": false }))
