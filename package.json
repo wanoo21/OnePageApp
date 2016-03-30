@@ -6,8 +6,12 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "browser-sync start --server --index ./tests/tests.html --port 3005 --files='./node_modules, ./devp/assets, ./tests'",
-    "start-devp": "browser-sync start --server --index ./devp/index.html --port 3001 --files='./devp/assets, ./devp/*.html'"
+    "test": "browser-sync start --server --index ./tests/tests.html --files='./node_modules, ./devp/assets, ./tests'",
+    "start-devp": "browser-sync start --server --index ./devp/index.html --files='./devp/assets, ./devp/*.html'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wanoo21/OnePageApp"
   },
   "keywords": [
     "bootstrap",
@@ -27,6 +31,7 @@
   },
   "devDependencies": {
     "browser-sync": "^2.11.2",
+    "gulp-cli": "^1.2.1",
     "gulp-concat": "^2.6.0",
     "gulp-htmlmin": "^1.3.0",
     "gulp-sass": "^2.2.0",

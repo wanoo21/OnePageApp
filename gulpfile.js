@@ -27,17 +27,17 @@ gulp.task('scss', function () {
         .pipe(sourcemaps.init())
         .pipe(sass(config.scss).on('error', sass.logError))
         .pipe(sourcemaps.write('./maps'))
-        .pipe(gulp.dest('devp/assets/css'))
+        .pipe(gulp.dest('./devp/assets/css'))
 });
 
 // Listen TypeScript changes
-gulp.task('watch:ts', ['scripts'], function () {
+gulp.task('watch:ts', function () {
    gulp.watch('devp/ts/*.ts', ['scripts'])
 });
 
 // Listen sass changes
-gulp.task('watch:scss', ['scss'], function () {
-   gulp.watch('devp/sass/*.scss', ['scss'])
+gulp.task('watch:scss', function () {
+   gulp.watch('devp/scss/*.scss', ['scss'])
 });
 
 // Get Production version
@@ -60,6 +60,6 @@ gulp.task('default', [
 
 // Watch all tasks
 gulp.task('watch:all', [
-    'watch:ts',
-    'watch:scss'
+  'watch:ts',
+  'watch:scss'
 ]);

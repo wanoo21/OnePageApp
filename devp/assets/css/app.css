@@ -1,3 +1,30 @@
-html{box-sizing:border-box}*,*::after,*::before{box-sizing:inherit}body section{max-width:1200px;margin-left:auto;margin-right:auto}body section::after{clear:both;content:"";display:table}body section aside{float:left;display:block;margin-right:2.35765%;width:40.29137%}body section aside:last-child{margin-right:0}body section article{float:left;display:block;margin-right:2.35765%;width:40.29137%}body section article:last-child{margin-right:0}
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+body section {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto; }
+  body section::after {
+    clear: both;
+    content: "";
+    display: table; }
+  body section aside {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 23.23176%; }
+    body section aside:last-child {
+      margin-right: 0; }
+  body section article {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 57.35098%; }
+    body section article:last-child {
+      margin-right: 0; }
 
 /*# sourceMappingURL=maps/app.css.map */

@@ -6,11 +6,11 @@ body {
     @include outer-container;
 
     aside {
-      @include span-columns(5)
+      @include span-columns(3);
     }
 
     article {
-      @include span-columns(5)
+      @include span-columns(7)
     }
 
   }

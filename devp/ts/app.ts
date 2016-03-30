@@ -1,8 +1,5 @@
-interface App {
-    name: string,
-    price: number
-}
+/// <reference path="jquery/jquery.d.ts" />
 
-function Name(a: App[]) {
-    return a.splice(0)
-}
+(($) => {
+
+})(jQuery)
