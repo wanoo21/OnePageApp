@@ -1,0 +1,8 @@
+{
+  "scss": {
+    "outputStyle": "compressed"
+  },
+  "htmlmin": {
+    "collapseWhitespace": true
+  }
+}

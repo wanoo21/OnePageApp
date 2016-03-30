@@ -7,6 +7,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var htmlmin = require('gulp-htmlmin');
 var concat = require('gulp-concat');
 var tsProject = ts.createProject('tsconfig.json');
+var config = require('./config');
 
 var productionMap = './prod';
 
@@ -24,7 +25,7 @@ gulp.task('scripts', function () {
 gulp.task('scss', function () {
     return gulp.src('devp/scss/*.scss')
         .pipe(sourcemaps.init())
-        .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
+        .pipe(sass(config.scss).on('error', sass.logError))
         .pipe(sourcemaps.write('./maps'))
         .pipe(gulp.dest('devp/assets/css'))
 });
@@ -47,7 +48,7 @@ gulp.task('get-production', ['scss', 'scripts'], function () {
 
     // Return compressed html
     return gulp.src('./devp/**/*.html')
-        .pipe(htmlmin({ collapseWhitespace: true }))
+        .pipe(htmlmin(config.htmlmin))
         .pipe(gulp.dest(productionMap))
 });
 
