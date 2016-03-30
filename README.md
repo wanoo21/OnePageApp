@@ -35,7 +35,7 @@ tsd install
 ```
 Run your server in develompent mode
 ```shell
-npm run-scripts run start-devp
+npm run-script start-devp
 ```
 That's all!
 
@@ -46,7 +46,7 @@ gulp watch:all
 ```
 If your server is not running, start it, in addiotional terminal tab
 ```shell
-npm run-scripts run start-devp
+npm run-script start-devp
 ```
 Now, make your changes in `./devp` folder. 
 Browser will refresh your page automatically with [Browser Sync](https://www.browsersync.io/).
@@ -61,7 +61,7 @@ npm test
 ## Production
 If you want start server in production mode, run:
 ```shell
-npm run-scripts run start-prod
+npm run-script start-prod
 ```
 Get your clean and fully optimize project.
 ```shell
