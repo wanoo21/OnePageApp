@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "Simple start app with Sass, TypeScript, Gulp and Browser-Sync.",
   "directories": {
-    "test": "test"
+    "test": "tests"
   },
   "scripts": {
-    "test": "browser-sync start --server --index ./tests/tests.html --port 3005 --files='./node_modules, ./assets, ./tests'",
-    "start": "browser-sync start --server --port 3001 --files='./assets'"
+    "test": "browser-sync start --server --index ./tests/tests.html --port 3005 --files='./node_modules, ./devp/assets, ./tests'",
+    "start-devp": "browser-sync start --server --index ./devp/index.html --port 3001 --files='./devp/assets, ./devp/*.html'"
   },
   "keywords": [
     "bootstrap",
@@ -22,10 +22,12 @@
   "license": "ISC",
   "dependencies": {
     "bourbon": "^4.2.6",
+    "bourbon-neat": "^1.7.4",
     "gulp": "latest"
   },
   "devDependencies": {
     "browser-sync": "^2.11.2",
+    "gulp-concat": "^2.6.0",
     "gulp-htmlmin": "^1.3.0",
     "gulp-sass": "^2.2.0",
     "gulp-sourcemaps": "^1.6.0",
