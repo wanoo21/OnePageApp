@@ -1,7 +1,12 @@
 # Start build one page app
 ## Overview
 Build one page with Scss, TypeScript, Gulp, Browser-Sync and Jasmine. Ideal to create a modern landing pages or one page application.  Notable features:
-+ Implemented `gulp` tasks
++ Included [Bourbon](http://bourbon.io/) and [Bourbon Neat](http://neat.bourbon.io/).
++ Autorefresh page with [Browser Sync](https://www.browsersync.io/).
++ Implemented `gulp` tasks.
++ Autocompile `scss` and `ts` files.
++ Other additional features: `concat`, `html minify`, `css` and `js` autocompiled `maps`, etc.
++ Full configuration `./config.json` file for your needs.
 
 ## Dependencies
 [Gulp](http://gulpjs.com/)
@@ -19,45 +24,45 @@ npm install -g typescript
 ## Get Starting
 Note: All commands entered need to be performed from within *this directory*.
 
-1. Clone this repo and install all dependencies
+Clone this repo and install all dependencies
 
 ```shell
 git clone https://github.com/wanoo21/OnePageApp.git
 cd OnePageApp
 npm install
 ```
-2. Install jQuery ts dependency
+Install jQuery ts dependency
 ```shell
 npm install -g tsd
 tsd install
 ```
-3. Run your server in develompent mode
+Run your server in develompent mode
 ```shell
 npm run-scripts run start-devp
 ```
 Thats all!
 
 ## How to make changes
-1. First, run `gulp` files watcher
+First, run `gulp` files watcher
 ```shell
 gulp watch:all
 ```
-2. If your server is not running, start it, in addiotional terminal tab
+If your server is not running, start it, in addiotional terminal tab
 ```shell
 npm run-scripts run start-devp
 ```
-3. Now, make your changes in `./devp` folder. 
-4. Browser will refresh your page automatically with [Browser Sync](https://www.browsersync.io/).
+Now, make your changes in `./devp` folder. 
+Browser will refresh your page automatically with [Browser Sync](https://www.browsersync.io/).
 
 ## Testing
-1. After a change, make test function in `./tests/test.spec.js`. Don't worry, you can test all your functions from `./devp/ts/*.ts` files.
-2. Run test with [Jasmine](http://jasmine.github.io/).
+After a change, make test function in `./tests/test.spec.js`. Don't worry, you can test all your functions from `./devp/ts/*.ts` files.
+Run test with [Jasmine](http://jasmine.github.io/).
 ```shell
 npm test
 ```
 
 ## Production
-1. Get your clean and full optimized project.
+Get your clean and full optimized project.
 ```shell
 gulp get-production
 ```
