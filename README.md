@@ -61,13 +61,13 @@ npm test
 ## Production
 If you want start server in production mode, run:
 ```shell
-npm run-script start-prod
+npm start
 ```
 Get your clean and fully optimize project.
 ```shell
 gulp get-production
 ```
-In root folder, you must find a `./prod` folder, inside is your project! Yeah, cool, right?
+In root folder, you must find a `./prod` folder by default, inside is your project! Yeah, cool, right?
 
 ## Configurations
 All your configurations for development and production mode, you can find in `./config.json`. 

@@ -1,5 +1,4 @@
 /// <reference path="../../typings/tsd.d.ts"/>
 (function ($) {
+    alert('OK');
 })(jQuery);
-
-//# sourceMappingURL=maps/app.js.map

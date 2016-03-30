@@ -1,24 +1,12 @@
 {
-  "prod": {
-    "scss": {
-      "outputStyle": "compressed"
-    },
-    "htmlmin": {
-      "collapseWhitespace": true
-    },
-    "tsconfig": {
-
-    }
+  "productionFolderPath": "./prod",
+  "scss": {
+    "outputStyle": "compressed"
   },
-  "devp": {
-    "scss": {
-
-    },
-    "htmlmin": {
-      "collapseWhitespace": true
-    },
-    "tsconfig": {
-
-    }
+  "htmlmin": {
+    "collapseWhitespace": true
+  },
+  "sourceMaps": {
+    "addComment": false
   }
 }

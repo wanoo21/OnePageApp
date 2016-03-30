@@ -1,5 +1,5 @@
 /// <reference path="../../typings/tsd.d.ts"/>
 
 (($) => {
-
-})(jQuery)
+    alert('OK')
+})(jQuery);

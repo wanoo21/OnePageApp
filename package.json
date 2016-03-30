@@ -7,7 +7,8 @@
   },
   "scripts": {
     "test": "browser-sync start --server --index ./tests/tests.html --files='./node_modules, ./devp/assets, ./tests'",
-    "start-devp": "browser-sync start --server --index ./devp/index.html --files='./devp/assets, ./devp/*.html'"
+    "start-devp": "browser-sync start --server devp --files='./devp/assets, ./devp/*.html'",
+    "start": "gulp get-production && node index.js"
   },
   "repository": {
     "type": "git",
@@ -35,6 +36,7 @@
     "gulp-sass": "^2.2.0",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-typescript": "^2.12.1",
-    "jasmine-core": "2.4.1"
+    "jasmine-core": "2.4.1",
+    "send": "^0.13.2"
   }
 }

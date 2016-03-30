@@ -6,27 +6,25 @@ var ts = require('gulp-typescript');
 var sourcemaps = require('gulp-sourcemaps');
 var htmlmin = require('gulp-htmlmin');
 var concat = require('gulp-concat');
-var tsProject = ts.createProject('tsconfig.json');
+var tsProject = ts.createProject('tsconfig.json', { noExternalResolve: false });
 var config = require('./config');
-
-var productionMap = './prod';
 
 gulp.task('scripts', function () {
     var tsResult = tsProject.src('devp/ts/*.ts')
-        .pipe(sourcemaps.init())
-        .pipe(ts(tsProject, config.devp.tsconfig));
+        .pipe(sourcemaps.init({ "loadMaps": true, "debug": false }))
+        .pipe(ts(tsProject, { sortOutput: true }));
 
     return tsResult.js
         .pipe(concat('app.js'))
-        .pipe(sourcemaps.write('maps'))
+        .pipe(sourcemaps.write('maps', config.sourceMaps))
         .pipe(gulp.dest('./devp/assets/js'));
 });
 
 gulp.task('scss', function () {
     return gulp.src('devp/scss/*.scss')
-        .pipe(sourcemaps.init())
-        .pipe(sass(config.devp.scss).on('error', sass.logError))
-        .pipe(sourcemaps.write('./maps'))
+        .pipe(sourcemaps.init({ "loadMaps": true, "debug": false }))
+        .pipe(sass(config.scss).on('error', sass.logError))
+        .pipe(sourcemaps.write('maps', config.sourceMaps))
         .pipe(gulp.dest('./devp/assets/css'))
 });
 
@@ -41,15 +39,15 @@ gulp.task('watch:scss', function () {
 });
 
 // Get Production version
-gulp.task('get-production', ['scss', 'scripts'], function () {
+gulp.task('get-production', function () {
     // Get all optimized assets
     gulp.src('./devp/assets/**/*')
-        .pipe(gulp.dest(productionMap + '/assets'));
+        .pipe(gulp.dest(config.productionFolderPath + '/assets'));
 
     // Return compressed html
     return gulp.src('./devp/**/*.html')
-        .pipe(htmlmin(config.prod.htmlmin))
-        .pipe(gulp.dest(productionMap))
+        .pipe(htmlmin(config.htmlmin))
+        .pipe(gulp.dest(config.productionFolderPath))
 });
 
 // Run default tasks
