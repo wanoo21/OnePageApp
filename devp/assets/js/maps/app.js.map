@@ -1,1 +1,1 @@
-{"version":3,"sources":["app.ts"],"names":[],"mappings":"AAAA,2CAA2C;AAE3C,CAAC,UAAC,CAAC;AAEH,CAAC,CAAC,CAAC,MAAM,CAAC,CAAA","file":"app.js","sourceRoot":"/source/","sourcesContent":["/// <reference path=\"jquery/jquery.d.ts\" />\n\n(($) => {\n\n})(jQuery)\n"]}
+{"version":3,"sources":["app.ts"],"names":[],"mappings":"AAAA,2CAA2C;AAE3C,CAAC,UAAC,CAAC;AAEH,CAAC,CAAC,CAAC,MAAM,CAAC,CAAA","file":"app.js","sourceRoot":"/source/","sourcesContent":["/// <reference path=\"jquery/jquery.d.ts\" />\r\n\r\n(($) => {\r\n\r\n})(jQuery)\r\n"]}

@@ -1,8 +1,24 @@
 {
-  "scss": {
-    "outputStyle": "compressed"
+  "prod": {
+    "scss": {
+      "outputStyle": "compressed"
+    },
+    "htmlmin": {
+      "collapseWhitespace": true
+    },
+    "tsconfig": {
+
+    }
   },
-  "htmlmin": {
-    "collapseWhitespace": true
+  "devp": {
+    "scss": {
+
+    },
+    "htmlmin": {
+      "collapseWhitespace": true
+    },
+    "tsconfig": {
+
+    }
   }
 }

@@ -14,7 +14,7 @@ var productionMap = './prod';
 gulp.task('scripts', function () {
     var tsResult = tsProject.src('devp/ts/*.ts')
         .pipe(sourcemaps.init())
-        .pipe(ts(tsProject));
+        .pipe(ts(tsProject, config.devp.tsconfig));
 
     return tsResult.js
         .pipe(concat('app.js'))
@@ -25,7 +25,7 @@ gulp.task('scripts', function () {
 gulp.task('scss', function () {
     return gulp.src('devp/scss/*.scss')
         .pipe(sourcemaps.init())
-        .pipe(sass(config.scss).on('error', sass.logError))
+        .pipe(sass(config.devp.scss).on('error', sass.logError))
         .pipe(sourcemaps.write('./maps'))
         .pipe(gulp.dest('./devp/assets/css'))
 });
@@ -48,7 +48,7 @@ gulp.task('get-production', ['scss', 'scripts'], function () {
 
     // Return compressed html
     return gulp.src('./devp/**/*.html')
-        .pipe(htmlmin(config.htmlmin))
+        .pipe(htmlmin(config.prod.htmlmin))
         .pipe(gulp.dest(productionMap))
 });
 
