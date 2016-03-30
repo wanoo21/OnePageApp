@@ -1,17 +1,31 @@
 @import "../../node_modules/bourbon/app/assets/stylesheets/bourbon";
 @import "../../node_modules/bourbon-neat/app/assets/stylesheets/neat";
 
+html {
+  height: 100%;
+}
 body {
-  section {
-    @include outer-container;
-
-    aside {
-      @include span-columns(3);
+  margin: 0;
+  height: 100%;
+  font-family: 'trebuchet ms', verdana, arial, serif;
+  content {
+    @include display(flex);
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content(center);
+    @include background(linear-gradient(#22ccff, #07e2ff) left);
+    @include animation();
+    height: 100%;
+    h1 {
+      text-shadow: 1px 2px 3px #777777;
+      font-size: 60px;
+      color: #FFFFFF;
     }
-
-    article {
-      @include span-columns(7)
+    h2 {
+      color: #353535;;
     }
-
+    img {
+      max-width: 100px;
+    }
   }
 }
