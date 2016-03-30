@@ -1,10 +1,10 @@
-# Simple Html Start App
-## Start app with Sass, TypeScript, Gulp, Browser-Sync and Jasmine.
+# Start build one page app
+## Start build one page app with Scss, TypeScript, Gulp, Browser-Sync and Jasmine.
 
 Ideal to create a modern landing pages with all technologies.
 
-For start application, run
-> npm start
+For start application in development mode, run
+> npm run-scripts start-devp
 
 Your application will be start with Browser-Sync.
 
