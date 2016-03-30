@@ -17,12 +17,9 @@ npm install -g gulp-cli
 ```shell
 npm install -g typescript
 ```
-[Browser Sync](https://www.browsersync.io/)
-
-[Jasmine](http://jasmine.github.io/)
 
 ## Get Starting
-Note: All commands entered need to be performed from within *this directory*.
+Note: All commands entered need to be performed from within *project directory*.
 
 Clone this repo and install all dependencies
 
@@ -40,7 +37,7 @@ Run your server in develompent mode
 ```shell
 npm run-scripts run start-devp
 ```
-Thats all!
+That's all!
 
 ## How to make changes
 First, run `gulp` files watcher
@@ -62,7 +59,11 @@ npm test
 ```
 
 ## Production
-Get your clean and full optimized project.
+If you want start server in production mode, run:
+```shell
+npm run-scripts run start-prod
+```
+Get your clean and fully optimize project.
 ```shell
 gulp get-production
 ```
