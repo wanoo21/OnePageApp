@@ -1,7 +1,7 @@
 {
   "productionFolderPath": "./prod",
   "scss": {
-    "outputStyle": "compressed"
+    "outputStyle": "expanded"
   },
   "htmlmin": {
     "collapseWhitespace": true

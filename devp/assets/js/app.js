@@ -1,3 +1,6 @@
-/// <reference path="../../typings/tsd.d.ts"/>
-(function ($) {
-})(jQuery);
+var app = new Vue({
+    el: 'content',
+    data: {
+        title: "It's Works, Uhuu!"
+    }
+});
