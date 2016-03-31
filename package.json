@@ -1,10 +1,11 @@
 {
-  "name": "simple-start-app",
+  "name": "OnePageApp",
   "version": "1.0.0",
-  "description": "Simple start app with Sass, TypeScript, Gulp and Browser-Sync.",
+  "description": "Simple start app with Scss, TypeScript, Gulp, Browser-Sync and Jasmine.",
   "directories": {
     "test": "tests"
   },
+  "main": "index.js",
   "scripts": {
     "test": "browser-sync start --server --index ./tests/index.html --files='./node_modules, ./devp/assets/js/app.js, ./tests/test.spec.js'",
     "start-devp": "browser-sync start --server devp --files='./devp/assets, ./devp/*.html'",
@@ -12,8 +13,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wanoo21/OnePageApp"
+    "url": "https://github.com/wanoo21/OnePageApp"
   },
+  "bugs": "https://github.com/wanoo21/OnePageApp/issues",
+  "homepage": "http://wanoo21.github.io/onepageapp/",
   "keywords": [
     "bootstrap",
     "bourbon",
@@ -23,7 +26,7 @@
     "start",
     "app"
   ],
-  "author": "Ion Prodan",
+  "author": "Ion Prodan <ionprodan33@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "bourbon": "^4.2.6",
