@@ -28,7 +28,7 @@ git clone https://github.com/wanoo21/OnePageApp.git
 cd OnePageApp
 npm install
 ```
-Install jQuery ts dependency
+Install jQuery and Vuejs ts dependency
 ```shell
 npm install -g tsd
 tsd install
@@ -48,12 +48,12 @@ If your server is not running, start it, in addiotional terminal tab
 ```shell
 npm run-script start-devp
 ```
-Now, make your changes in `./devp` folder. 
+Now, make your changes in `./devp` folder.
 Browser will refresh your page automatically with [Browser Sync](https://www.browsersync.io/).
 
 ## Testing
 After a change, make test function in `./tests/test.spec.js`. Don't worry, you can test all your functions from `./devp/ts/*.ts` files.
-Run test with [Jasmine](http://jasmine.github.io/).
+Run test with [Jasmine](http://jasmine.github.io/)
 ```shell
 npm test
 ```
@@ -63,12 +63,12 @@ If you want start server in production mode, run:
 ```shell
 npm start
 ```
-Get your clean and fully optimize project.
+Get your clean and fully optimize project
 ```shell
 gulp get-production
 ```
 In root folder, you must find a `./prod` folder by default, inside is your project! Yeah, cool, right?
 
 ## Configurations
-All your configurations for development and production mode, you can find in `./config.json`. 
+All your configurations for development and production mode, you can find in `./config.json`.
 You can rewrite or add any other properties!
