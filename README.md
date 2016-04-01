@@ -11,7 +11,7 @@ Build one page with Scss, TypeScript, Gulp, Browser-Sync and Jasmine. Ideal to c
 ## Dependencies
 [Gulp](http://gulpjs.com/)
 ```shell
-npm install -g gulp-cli
+npm install -g gulp
 ```
 [TypeScript](http://www.typescriptlang.org/)
 ```shell
