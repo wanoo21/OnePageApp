@@ -7,4 +7,4 @@ let app = new Vue({
   }
 });
 
-let node;
+var let;

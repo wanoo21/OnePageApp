@@ -8,20 +8,20 @@ var htmlmin = require('gulp-htmlmin');
 var concat = require('gulp-concat');
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
+var series = require('stream-series');
 var tsProject = ts.createProject('./tsconfig.json', { sortOutput: true });
 var inject = require('gulp-inject');
 var config = require('./config');
 
 // Autoinject css and js in html files
-gulp.task('index', ['typescript', 'scss', 'images'], function () {
+gulp.task('index', function () {
   var target = gulp.src('./devp/index.html');
-  // It's not necessary to read the files (will speed up things), we're only after their paths:
-  var sources = gulp.src(['./devp/assets/js/**/*.js', './devp/assets/css/**/*.css', '!./devp/assets/js/devp/**/*'], { read: false });
-
-  return target.pipe(inject(sources, {
-    ignorePath: 'devp'
-  }))
-    .pipe(gulp.dest('./devp'));
+  // Load vendors first
+  var vendors = gulp.src(['./devp/assets/vendors/css/**/*.css', './devp/assets/vendors/js/**/*.js'], { read: false });
+  // Load application files
+  var sources = gulp.src(['./devp/assets/css/**/*.css', './devp/assets/js/**/*.js'], { read: false });
+  // Put vendors on top of application files
+  return target.pipe(inject(series(vendors, sources), { ignorePath: 'devp' })).pipe(gulp.dest('./devp'));
 });
 
 // Optimize all images
@@ -68,8 +68,13 @@ gulp.task('watch:scss', function () {
    gulp.watch('devp/scss/*.scss', ['scss'])
 });
 
+// Autoinject assets in html after changes
+gulp.task('watch:assets', function () {
+  return gulp.watch(['./devp/assets/css/**/*.css', './devp/assets/js/**/*.js'], ['index'])
+})
+
 // Get Production version
-gulp.task('get-production', ['index'], function () {
+gulp.task('get-production', ['typescript', 'scss', 'images'], function () {
     // Get all optimized assets
     gulp.src('./devp/assets/**/*')
         .pipe(gulp.dest(config.productionFolderPath + '/assets'));
@@ -81,10 +86,11 @@ gulp.task('get-production', ['index'], function () {
 });
 
 // Run default tasks
-gulp.task('default', ['index']);
+gulp.task('default', ['typescript', 'scss', 'images', 'index']);
 
 // Watch all tasks
 gulp.task('watch:all', [
-  'watch:typescript',
-  'watch:scss'
+  'watch:ts',
+  'watch:scss',
+  'watch:assets'
 ]);
