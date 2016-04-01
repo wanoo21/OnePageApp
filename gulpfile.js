@@ -6,6 +6,8 @@ var ts = require('gulp-typescript');
 var sourcemaps = require('gulp-sourcemaps');
 var htmlmin = require('gulp-htmlmin');
 var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
+var cssmin = require('gulp-cssmin');
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
 var series = require('stream-series');
@@ -17,11 +19,12 @@ var config = require('./config');
 gulp.task('index', function () {
   var target = gulp.src('./devp/index.html');
   // Load vendors first
-  var vendors = gulp.src(['./devp/assets/vendors/css/**/*.css', './devp/assets/vendors/js/**/*.js'], { read: false });
+  var vendors = gulp.src(['./devp/assets/vendors/css/**/*.css', './devp/assets/vendors/js/**/*.js', 'devp/assets/bower/**/dist/*.min.js'], { read: false });
   // Load application files
   var sources = gulp.src(['./devp/assets/css/**/*.css', './devp/assets/js/**/*.js'], { read: false });
+
   // Put vendors on top of application files
-  return target.pipe(inject(series(vendors, sources), { ignorePath: 'devp' })).pipe(gulp.dest('./devp'));
+  return target.pipe(inject(series(vendors, sources), { ignorePath: 'devp', addRootSlash: true })).pipe(gulp.dest('./devp'));
 });
 
 // Optimize all images
@@ -74,13 +77,23 @@ gulp.task('watch:assets', function () {
 })
 
 // Get Production version
-gulp.task('get-production', ['typescript', 'scss', 'images'], function () {
-    // Get all optimized assets
-    gulp.src('./devp/assets/**/*')
+gulp.task('get-production', ['default'], function () {
+    // Get all compiled assets
+    gulp.src(['./devp/assets/**', '!./devp/assets/js/**', '!./devp/assets/css/**'])
         .pipe(gulp.dest(config.productionFolderPath + '/assets'));
 
+    // Get all javascript files and minify its
+    gulp.src(['./devp/assets/js/**/*.js'])
+        .pipe(uglify(config.uglify))
+        .pipe(gulp.dest(config.productionFolderPath + '/assets/js'));
+
+    // Get all css files and minify its
+    gulp.src(['./devp/assets/css/**/*.css'])
+        .pipe(cssmin(config.cssmin))
+        .pipe(gulp.dest(config.productionFolderPath + '/assets/css'));
+
     // Return compressed html
-    return gulp.src('./devp/**/*.html')
+    return gulp.src('./devp/index.html')
         .pipe(htmlmin(config.htmlmin))
         .pipe(gulp.dest(config.productionFolderPath))
 });

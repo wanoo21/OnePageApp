@@ -1,3 +1,5 @@
-it('Name is function', function(){
-    expect(typeof test).toBe('object');
-});
+describe("Vue", function () {
+  it("Should be true", function () {
+    expect(Vue).not.toBeNull();
+  })
+})

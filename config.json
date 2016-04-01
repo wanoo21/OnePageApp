@@ -6,6 +6,8 @@
   "htmlmin": {
     "collapseWhitespace": true
   },
+  "cssmin": {},
+  "uglify": {},
   "sourceMaps": {
     "addComment": false
   }

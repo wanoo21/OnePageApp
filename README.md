@@ -1,6 +1,6 @@
 # Start build one page app
 ## Overview
-Build one page with Scss, TypeScript, Gulp, Browser-Sync and Jasmine. Ideal to create a modern landing pages or one page application.  Notable features:
+Build one page with Scss, TypeScript, Gulp, Browser-Sync, Karma and Jasmine. Ideal to create a modern landing pages or one page application.  Notable features:
 + Included [Bourbon](http://bourbon.io/) and [Bourbon Neat](http://neat.bourbon.io/).
 + Autorefresh page with [Browser Sync](https://www.browsersync.io/).
 + Implemented `gulp` tasks.
@@ -12,6 +12,10 @@ Build one page with Scss, TypeScript, Gulp, Browser-Sync and Jasmine. Ideal to c
 [Gulp](http://gulpjs.com/)
 ```shell
 npm install -g gulp
+```
+[Bower](http://gulpjs.com/)
+```shell
+npm install -g bower
 ```
 [TypeScript](http://www.typescriptlang.org/)
 ```shell

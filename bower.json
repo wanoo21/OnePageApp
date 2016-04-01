@@ -1,0 +1,32 @@
+{
+  "name": "OnePageApp",
+  "description": "Simple start app with Scss, TypeScript, Gulp, Browser-Sync and Jasmine.",
+  "main": "index.js",
+  "authors": [
+    "Ion Prodan <ionprodan33@gmail.com>"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "bootstrap",
+    "bourbon",
+    "browser-sync",
+    "gulp",
+    "typescript",
+    "start",
+    "app"
+  ],
+  "homepage": "https://github.com/wanoo21/OnePageApp",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "devp/assets/bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "vue": "^1.0.20"
+  }
+}
