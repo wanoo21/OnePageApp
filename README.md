@@ -17,6 +17,11 @@ npm install -g gulp
 ```shell
 npm install -g typescript
 ```
+[Node JS v4+](https://nodejs.org/en/)
+```
+curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
 
 ## Get Starting
 Note: All commands entered need to be performed from within *project directory*.

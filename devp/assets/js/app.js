@@ -4,3 +4,4 @@ var app = new Vue({
         title: "It's Works, Uhuu!"
     }
 });
+var node;

@@ -5,4 +5,6 @@ let app = new Vue({
   data: {
     title: "It's Works, Uhuu!"
   }
-})
+});
+
+let node;

@@ -6,11 +6,6 @@
     "removeComments": true
   },
   "compileOnSave": false,
-  "filesGlob": [
-    "**/*.ts",
-    "**/*.tsx",
-    "!node_modules/**"
-  ],
   "exclude": [
     "node_modules"
   ],

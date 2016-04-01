@@ -8,7 +8,7 @@
   "main": "index.js",
   "scripts": {
     "test": "browser-sync start --server --index ./tests/index.html --files='./node_modules, ./devp/assets/js/app.js, ./tests/test.spec.js'",
-    "start-devp": "browser-sync start --server devp --files='./devp/assets, ./devp/*.html'",
+    "start-devp": "gulp && browser-sync start --server devp --files='./devp/assets, ./devp/*.html'",
     "start": "gulp get-production && node index.js"
   },
   "repository": {
@@ -36,9 +36,12 @@
     "browser-sync": "^2.11.2",
     "gulp-concat": "^2.6.0",
     "gulp-htmlmin": "^1.3.0",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-inject": "^4.0.0",
     "gulp-sass": "^2.2.0",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-typescript": "^2.12.1",
+    "imagemin-pngquant": "^4.2.2",
     "jasmine-core": "2.4.1",
     "send": "^0.13.2"
   }
