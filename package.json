@@ -7,7 +7,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "karma start karma.conf.js",
+    "test": "gulp typescript && karma start karma.conf.js",
     "start-devp": "gulp && browser-sync start --server devp --files='./devp/*.html'",
     "start": "gulp get-production && node index.js"
   },
