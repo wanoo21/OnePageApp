@@ -19,7 +19,7 @@ var config = require('./config');
 gulp.task('index', function () {
   var target = gulp.src('./devp/index.html');
   // Load vendors first
-  var vendors = gulp.src(['./devp/assets/vendors/css/**/*.css', './devp/assets/vendors/js/**/*.js', 'devp/assets/bower/**/dist/*.min.js'], { read: false });
+  var vendors = gulp.src(['./devp/assets/vendors/css/**/*.css', 'devp/assets/bower/**/*.min.css', './devp/assets/vendors/js/**/*.js', 'devp/assets/bower/**/*.min.js'], { read: false });
   // Load application files
   var sources = gulp.src(['./devp/assets/css/**/*.css', './devp/assets/js/**/*.js'], { read: false });
 
