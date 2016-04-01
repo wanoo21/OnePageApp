@@ -15,7 +15,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'devp/assets/bower/**/dist/*.min.js',
+      'devp/assets/bower/**/*.min.js',
       'devp/assets/js/**/*.js',
       'tests/**/*.spec.js'
     ],

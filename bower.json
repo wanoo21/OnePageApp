@@ -26,7 +26,5 @@
     "test",
     "tests"
   ],
-  "dependencies": {
-    "vue": "^1.0.20"
-  }
+  "dependencies": {}
 }
