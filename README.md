@@ -42,6 +42,11 @@ Install jQuery and Vuejs ts dependency
 npm install -g tsd
 tsd install
 ```
+Install bower dependencies
+```
+bower install
+```
+
 Run your server in develompent mode
 ```shell
 npm run-script start-devp
